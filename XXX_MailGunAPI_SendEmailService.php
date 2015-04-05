@@ -19,8 +19,15 @@ class XXX_MailGunAPI_SendEmailService
 		$domain = 'api.mailgun.net';
 		$path = '/v3';
 
-		$uri = $protocol . self::$user . ':' . self::$apiKey . '@' . $domain . $path . '/' . $customDomain . '/' . 'messages.mime';
+		$mimeExtension = '';
+		if ($data['message'] != '')
+		{
+			$mimeExtension = '.mime';
+		}
 
+		$uri = $protocol . self::$user . ':' . self::$apiKey . '@' . $domain . $path . '/' . $customDomain . '/messages' . $mimeExtension;
+		//$uri = 'http://bin.mailgun.net/d9242822';
+		echo $uri;
 		$response = XXX_MailGunAPIHelpers::doPOSTRequest($uri, $data);
 		
 		if ($response != false)
@@ -29,7 +36,6 @@ class XXX_MailGunAPI_SendEmailService
 		}
 		else
 		{
-			echo 'Failed';
 			self::$error = 'Failed POST request';
 		}
 
