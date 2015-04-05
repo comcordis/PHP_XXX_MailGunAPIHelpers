@@ -27,7 +27,7 @@ class XXX_MailGunAPI_SendEmailService
 
 		$uri = $protocol . self::$user . ':' . self::$apiKey . '@' . $domain . $path . '/' . $customDomain . '/messages' . $mimeExtension;
 		//$uri = 'http://bin.mailgun.net/d9242822';
-		echo $uri;
+		//echo $uri;
 		$response = XXX_MailGunAPIHelpers::doPOSTRequest($uri, $data);
 		
 		if ($response != false)
