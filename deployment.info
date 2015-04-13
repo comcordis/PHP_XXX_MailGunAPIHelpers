@@ -1,0 +1,6 @@
+project:XXX_MailGunAPIHelpers_PHP
+deployEnvironment:development
+checkout:master
+commitHash:45e7ff5afdebd76640b3b47088c615d4cfc7f653
+timestamp:2015-04-13T09:44:46Z
+deployer:operations
